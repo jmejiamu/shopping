@@ -1,133 +1,79 @@
 import React from "react";
-import product from "../../assets/products.jpg";
+// import product from "../../assets/products.jpg";
+
+const products = [
+  {
+    id: 1,
+    image:
+      "https://i.pinimg.com/736x/bc/f3/30/bcf330bb9a25741122f132c29a72a4ea.jpg",
+    price: 10,
+    description: "Lorem ipsum...",
+  },
+  {
+    id: 2,
+    image:
+      "https://i.pinimg.com/736x/bc/f3/30/bcf330bb9a25741122f132c29a72a4ea.jpg",
+    price: 10,
+    description: "Lorem ipsum...",
+  },
+  {
+    id: 3,
+    image:
+      "https://i.pinimg.com/736x/bc/f3/30/bcf330bb9a25741122f132c29a72a4ea.jpg",
+    price: 10,
+    description: "Lorem ipsum...",
+  },
+  {
+    id: 4,
+    image:
+      "https://i.pinimg.com/736x/bc/f3/30/bcf330bb9a25741122f132c29a72a4ea.jpg",
+    price: 10,
+    description: "Lorem ipsum...",
+  },
+  {
+    id: 5,
+    image:
+      "https://i.pinimg.com/736x/bc/f3/30/bcf330bb9a25741122f132c29a72a4ea.jpg",
+    price: 10,
+    description: "Lorem ipsum...",
+  },
+];
 const Products = () => {
   return (
     <main>
-      <section class="container">
-        <h1 id="checkitout" class="text-center mt-5 mb-5">
+      <section className="container">
+        <h1 id="checkitout" className="text-center mt-5 mb-5">
           Products
         </h1>
-        <div class="row">
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
+        <div className="row">
+          {products.map((product, index) => {
+            return (
+              <div key={product.id} className="col-md-4 mb-5">
+                <div className="thumbnail card card-style">
+                  <a href="./pages/product-details/index.html">
+                    <div className="bg-image hover-zoom">
+                      <img
+                        src={product.image}
+                        alt="Lights"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                  </a>
+                  <div className="caption d-flex justify-content-between">
+                    <p>{product.description}</p>
+                    <p>${product.price}</p>
+                  </div>
+                  <button
+                    type="button"
+                    // onClick="updateCartItem();"
+                    className="btn btn-primary btn-block"
+                  >
+                    Add
+                  </button>
                 </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum..T.</p>
-                <p>$10</p>
               </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
-                </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum...</p>
-                <p>$10</p>
-              </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
-                </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum...</p>
-                <p>$10</p>
-              </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
-                </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum...</p>
-                <p>$10</p>
-              </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
-                </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum...</p>
-                <p>$10</p>
-              </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="thumbnail card card-style">
-              <a href="./pages/product-details/index.html">
-                <div class="bg-image hover-zoom">
-                  <img src={product} alt="Lights" style={{ width: "100%" }} />
-                </div>
-              </a>
-              <div class="caption d-flex justify-content-between">
-                <p>Lorem ipsum...</p>
-                <p>$10</p>
-              </div>
-              <button
-                type="button"
-                onclick="updateCartItem();"
-                class="btn btn-primary btn-block"
-              >
-                Add
-              </button>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </section>
     </main>
