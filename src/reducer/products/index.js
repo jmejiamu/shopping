@@ -3,7 +3,7 @@ import { API_FAILED, API_LOADING, API_SUCCESS } from "../../helper/constants ";
 const initialState = {
   apiloading: false,
   failed: null,
-  productsList: null,
+  productsList: [],
 };
 
 const reducer = (state = initialState, action) => {
