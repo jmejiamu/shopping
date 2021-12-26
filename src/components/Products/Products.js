@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../action/products";
 // import product from "../../assets/products.jpg";
 
 const products = [
@@ -39,6 +41,13 @@ const products = [
   },
 ];
 const Products = () => {
+  const dispatch = useDispatch();
+
+  const dta = useSelector((state) => state);
+  console.log(dta);
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
   return (
     <main>
       <section className="container">
