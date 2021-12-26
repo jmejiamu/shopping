@@ -6,3 +6,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.custom-css-btn {
+  border-radius: 20px;
+}
