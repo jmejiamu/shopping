@@ -30,7 +30,7 @@ export function fetchData() {
     dispatch(fetchingData());
 
     try {
-      const response = await fetch(BASE_URL + "/books");
+      const response = await fetch(BASE_URL + "/products");
       const resJson = await response.json();
       dispatch(getProductsSuccess(resJson));
     } catch (error) {

@@ -1,5 +1,5 @@
 //This is temp URL
-export const BASE_URL = "https://thetechblog.me";
+export const BASE_URL = "http://localhost:5500";
 
 export const API_LOADING = "API_LOADING";
 export const API_FAILED = "API_FAILED";

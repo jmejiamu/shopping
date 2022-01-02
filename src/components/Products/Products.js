@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchData } from "../../action/products";
 // import ProductCard from "./components/ProductCard/ProductCard";
 
@@ -22,7 +23,7 @@ const Products = () => {
             return (
               <div key={product.id} className="col-md-4 mb-5">
                 <div className="thumbnail card card-style">
-                  <a href="./pages/product-details/index.html">
+                  <Link to={`/details/${product.id}`}>
                     <div className="bg-image hover-zoom">
                       <img
                         src={product.book_url}
@@ -30,7 +31,7 @@ const Products = () => {
                         style={{ width: "100%" }}
                       />
                     </div>
-                  </a>
+                  </Link>
                   <div className="caption d-flex justify-content-between">
                     <p>{product.book_description}</p>
                     <p>${product.book_cost}</p>

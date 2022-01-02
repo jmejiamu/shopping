@@ -1,6 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const ProDetails = () => {
+  let { id } = useParams();
+  console.log(">>>>>>>>>>", id);
   return (
     <main class="container mt-5">
       <section class="mb-5">
