@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../action/products";
-import ProductCard from "./components/ProductCard/ProductCard";
+// import ProductCard from "./components/ProductCard/ProductCard";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -32,8 +32,8 @@ const Products = () => {
                     </div>
                   </a>
                   <div className="caption d-flex justify-content-between">
-                    <p>{product.description}</p>
-                    <p>${product.price}</p>
+                    <p>{product.book_description}</p>
+                    <p>${product.book_cost}</p>
                   </div>
                   <button
                     type="button"
