@@ -61,6 +61,19 @@ app.get("/products", (req, res) => {
   res.json(products);
 });
 
+app.get("/products/:id", (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    res.status(404);
+    res.json({ message: "Product not found" });
+  } else {
+    res.status(200);
+    res.json(product);
+  }
+});
+
 app.listen(5500, () => {
   console.log("Server listen to port 5500");
 });
