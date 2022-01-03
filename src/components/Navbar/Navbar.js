@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [cartAdded, setCartAdded] = useState(0);
+  const dispatch = useDispatch();
+
+  const { cart } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    setCartAdded(cart.length);
+  }, [cart]);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
       <div className="container">
@@ -26,13 +36,12 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="./pages/cart-products/index.html">
+              <Link className="nav-link" to="/cart">
                 <i className="bi bi-cart"></i>
-                <span
-                  id="addItem"
-                  className="badge badge-pill bg-danger"
-                ></span>
-              </a>
+                <span id="addItem" className="badge badge-pill bg-danger">
+                  {cartAdded}
+                </span>
+              </Link>
             </li>
 
             <li className="nav-item mx-2">

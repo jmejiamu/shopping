@@ -13,11 +13,10 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchData());
   }, []);
+  if (cart.lenght > 0) {
+    sessionStorage.setItem("pro", JSON.stringify(cart));
+  }
 
-  const saveProducts = (p) => {
-    // console.log(p);
-    sessionStorage.setItem("pro", JSON.stringify(p));
-  };
   return (
     <main>
       <section className="container">
