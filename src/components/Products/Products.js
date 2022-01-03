@@ -49,7 +49,8 @@ const Products = () => {
                           product.id,
                           product.book_title,
                           product.book_url,
-                          product.book_cost
+                          parseFloat(product.book_cost),
+                          1
                         )
                       );
                     }}

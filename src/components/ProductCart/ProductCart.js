@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 
 const ProductCart = () => {
   const { cart } = useSelector((state) => state.products);
+
+  const quantityTotal = sum(cart, (x) => x.quantity);
+  const mainTotal = sum(cart, (x) => x.price);
   return (
     <main>
       <section>
@@ -70,7 +73,7 @@ const ProductCart = () => {
                                 <strong>${item.price}</strong>
                               </td>
                               <td class="border-0 align-middle">
-                                <strong>1</strong>
+                                <strong>{item.quantity}</strong>
                               </td>
                               <td class="border-0 align-middle">
                                 <a href="#" class="text-dark">
@@ -180,10 +183,12 @@ const ProductCart = () => {
                               <strong>Total:</strong>
                             </td>
                             <td class="border-0 align-middle">
-                              <strong id="main-total">$0</strong>
+                              <strong id="main-total">${mainTotal}</strong>
                             </td>
                             <td class="border-0 align-middle">
-                              <strong id="product-quantity">0</strong>
+                              <strong id="product-quantity">
+                                {quantityTotal}
+                              </strong>
                             </td>
                           </tr>
                           <tr>
@@ -205,6 +210,10 @@ const ProductCart = () => {
       </section>
     </main>
   );
+};
+
+const sum = (elem, selector) => {
+  return elem.map(selector).reduce((a, b) => a + b, 0);
 };
 
 export default ProductCart;

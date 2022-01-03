@@ -26,7 +26,7 @@ export const getProductsSuccess = (products) => {
   };
 };
 
-export const addProduct = (id, pro_name, pro_url, price) => {
+export const addProduct = (id, pro_name, pro_url, price, quantity) => {
   return {
     type: ADD_PRODUCT,
     product: {
@@ -34,6 +34,7 @@ export const addProduct = (id, pro_name, pro_url, price) => {
       pro_name,
       pro_url,
       price,
+      quantity,
     },
   };
 };
