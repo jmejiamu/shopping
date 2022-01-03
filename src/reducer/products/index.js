@@ -3,6 +3,7 @@ import {
   API_FAILED,
   API_LOADING,
   API_SUCCESS,
+  DELETE_PRODUCT,
 } from "../../helper/constants ";
 
 const initialState = {
@@ -36,7 +37,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         cart: [...state.cart, { ...action.product }],
       };
-
+    case DELETE_PRODUCT:
+      const id = action.id;
+      const product = state.cart.filter((item) => item.uniqueId !== id);
+      return {
+        ...state,
+        cart: product,
+      };
     default:
       return state;
   }

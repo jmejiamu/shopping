@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addProduct } from "../../action/products";
 import { BASE_URL } from "../../helper/constants ";
@@ -8,6 +8,8 @@ const ProDetails = () => {
   const [products, setProducts] = useState([]);
 
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.products);
+  console.log(cart);
 
   let { id } = useParams();
 
@@ -25,6 +27,7 @@ const ProDetails = () => {
   useEffect(() => {
     getOneProduct();
   }, []);
+  const uniqueId = new Date();
   return (
     <main class="container mt-5">
       <section class="mb-5">
@@ -110,7 +113,8 @@ const ProDetails = () => {
                     products.book_title,
                     products.book_url,
                     parseFloat(products.book_cost),
-                    1
+                    1,
+                    uniqueId.getTime()
                   )
                 );
               }}
@@ -121,7 +125,7 @@ const ProDetails = () => {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <h1 class="text-center">Most Viewed</h1>
         <div class="row">
           <div class="col-md-4 mb-5">
@@ -197,7 +201,7 @@ const ProDetails = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

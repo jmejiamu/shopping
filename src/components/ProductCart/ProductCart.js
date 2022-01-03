@@ -1,7 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteProduct } from "../../action/products";
 
 const ProductCart = () => {
+  const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
 
   const quantityTotal = sum(cart, (x) => x.quantity);
@@ -77,7 +79,12 @@ const ProductCart = () => {
                               </td>
                               <td class="border-0 align-middle">
                                 <a href="#" class="text-dark">
-                                  <i class="bi bi-trash"></i>
+                                  <i
+                                    onClick={() =>
+                                      dispatch(deleteProduct(item.uniqueId))
+                                    }
+                                    class="bi bi-trash"
+                                  ></i>
                                 </a>
                               </td>
                             </tr>

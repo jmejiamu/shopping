@@ -4,6 +4,7 @@ import {
   API_LOADING,
   API_SUCCESS,
   BASE_URL,
+  DELETE_PRODUCT,
 } from "../../helper/constants ";
 
 export const fetchingData = () => {
@@ -26,7 +27,14 @@ export const getProductsSuccess = (products) => {
   };
 };
 
-export const addProduct = (id, pro_name, pro_url, price, quantity) => {
+export const addProduct = (
+  id,
+  pro_name,
+  pro_url,
+  price,
+  quantity,
+  uniqueId
+) => {
   return {
     type: ADD_PRODUCT,
     product: {
@@ -35,7 +43,15 @@ export const addProduct = (id, pro_name, pro_url, price, quantity) => {
       pro_url,
       price,
       quantity,
+      uniqueId,
     },
+  };
+};
+
+export const deleteProduct = (id) => {
+  return {
+    type: DELETE_PRODUCT,
+    id,
   };
 };
 

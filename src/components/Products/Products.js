@@ -16,7 +16,8 @@ const Products = () => {
   if (cart.lenght > 0) {
     sessionStorage.setItem("pro", JSON.stringify(cart));
   }
-
+  //Use date to create a unique id
+  const uniqueId = new Date();
   return (
     <main>
       <section className="container">
@@ -50,7 +51,8 @@ const Products = () => {
                           product.book_title,
                           product.book_url,
                           parseFloat(product.book_cost),
-                          1
+                          1,
+                          uniqueId.getTime()
                         )
                       );
                     }}
