@@ -33,7 +33,7 @@ const Products = () => {
                     </div>
                   </Link>
                   <div className="caption d-flex justify-content-between">
-                    <p>{product.book_description}</p>
+                    <p>{product.book_title}</p>
                     <p>${product.book_cost}</p>
                   </div>
                   <button

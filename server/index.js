@@ -11,7 +11,8 @@ let products = [
   {
     id: 6,
     book_title: "Spring boot",
-    book_description: "book description ",
+    book_description:
+      "Spring Boot Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "101",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
@@ -19,7 +20,8 @@ let products = [
   {
     id: 5,
     book_title: "Express",
-    book_description: "book description ",
+    book_description:
+      "Express Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "78",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
@@ -27,7 +29,8 @@ let products = [
   {
     id: 4,
     book_title: "JavaScript",
-    book_description: "book description ",
+    book_description:
+      "JavaScript Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "10",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
@@ -35,7 +38,8 @@ let products = [
   {
     id: 3,
     book_title: "Java",
-    book_description: "book description ",
+    book_description:
+      "Java Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "30",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
@@ -43,7 +47,8 @@ let products = [
   {
     id: 2,
     book_title: "Node JS",
-    book_description: "book description ",
+    book_description:
+      "Node Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.",
     book_cost: "40",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
@@ -51,7 +56,8 @@ let products = [
   {
     id: 1,
     book_title: "React JS",
-    book_description: "book description ",
+    book_description:
+      "React Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "15",
     book_url:
       "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",

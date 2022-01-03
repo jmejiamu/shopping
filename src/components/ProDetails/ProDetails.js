@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { BASE_URL } from "../../helper/constants ";
 
 const ProDetails = () => {
+  const [products, setProducts] = useState([]);
+
   let { id } = useParams();
-  console.log(">>>>>>>>>>", id);
+
+  const getOneProduct = async () => {
+    try {
+      const res = await fetch(BASE_URL + `/products/${id}`);
+      const resJson = await res.json();
+
+      setProducts(resJson);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    getOneProduct();
+  }, []);
   return (
     <main class="container mt-5">
       <section class="mb-5">
@@ -19,7 +36,7 @@ const ProDetails = () => {
                   <figure class="view overlay rounded z-depth-1 main-img">
                     <a href="../../asset/products.jpg" data-size="710x823">
                       <img
-                        src="../../asset/products.jpg"
+                        src={products.book_url}
                         class="img-fluid z-depth-1"
                       />
                     </a>
@@ -29,8 +46,8 @@ const ProDetails = () => {
             </div>
           </div>
           <div class="col-md-6">
-            <h5>Fantasy T-shirt</h5>
-            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+            <h5>{products.book_title}</h5>
+            <p class="mb-2 text-muted text-uppercase small">Book</p>
 
             <div class="star-rating">
               <span class="bi bi-star-fill text-warning" data-rating="1"></span>
@@ -50,12 +67,7 @@ const ProDetails = () => {
                 <strong>$12.99</strong>
               </span>
             </p>
-            <p class="pt-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-              sapiente illo. Sit error voluptas repellat rerum quidem, soluta
-              enim perferendis voluptates laboriosam. Distinctio, officia quis
-              dolore quos sapiente tempore alias.
-            </p>
+            <p class="pt-1">{products.book_description}</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
