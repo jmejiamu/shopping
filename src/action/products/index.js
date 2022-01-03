@@ -1,4 +1,5 @@
 import {
+  ADD_PRODUCT,
   API_FAILED,
   API_LOADING,
   API_SUCCESS,
@@ -22,6 +23,16 @@ export const getProductsSuccess = (products) => {
   return {
     type: API_SUCCESS,
     products,
+  };
+};
+
+export const addProduct = (id, pro_name) => {
+  return {
+    type: ADD_PRODUCT,
+    product: {
+      id,
+      pro_name,
+    },
   };
 };
 

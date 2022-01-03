@@ -1,9 +1,15 @@
-import { API_FAILED, API_LOADING, API_SUCCESS } from "../../helper/constants ";
+import {
+  ADD_PRODUCT,
+  API_FAILED,
+  API_LOADING,
+  API_SUCCESS,
+} from "../../helper/constants ";
 
 const initialState = {
   apiloading: false,
   failed: null,
   productsList: [],
+  cart: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -24,6 +30,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         productsList: action.products,
         apiloading: false,
+      };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        cart: [...state.cart, { ...action.product }],
       };
 
     default:

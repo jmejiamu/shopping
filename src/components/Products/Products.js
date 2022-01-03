@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchData } from "../../action/products";
+import { addProduct, fetchData } from "../../action/products";
 // import ProductCard from "./components/ProductCard/ProductCard";
 
 const Products = () => {
   const dispatch = useDispatch();
 
-  const { productsList } = useSelector((state) => state.products);
+  const { productsList, cart } = useSelector((state) => state.products);
+  console.log(cart);
 
   useEffect(() => {
     dispatch(fetchData());
   }, []);
+
+  const saveProducts = (p) => {
+    // console.log(p);
+    sessionStorage.setItem("pro", JSON.stringify(p));
+  };
   return (
     <main>
       <section className="container">
@@ -38,7 +44,15 @@ const Products = () => {
                   </div>
                   <button
                     type="button"
-                    // onClick="updateCartItem();"
+                    onClick={() => {
+                      dispatch(
+                        addProduct(
+                          product.id,
+                          product.book_title
+                          // product.book_cost,
+                        )
+                      );
+                    }}
                     className="btn btn-primary btn-block"
                   >
                     Add
