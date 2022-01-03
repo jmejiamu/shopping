@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [cartAdded, setCartAdded] = useState(0);
-  const dispatch = useDispatch();
 
   const { cart } = useSelector((state) => state.products);
 
@@ -14,9 +13,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           Shopping Store
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,9 +30,9 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">

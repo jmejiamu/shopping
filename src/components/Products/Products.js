@@ -47,8 +47,9 @@ const Products = () => {
                       dispatch(
                         addProduct(
                           product.id,
-                          product.book_title
-                          // product.book_cost,
+                          product.book_title,
+                          product.book_url,
+                          product.book_cost
                         )
                       );
                     }}

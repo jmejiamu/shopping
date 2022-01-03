@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const ProductCart = () => {
+  const { cart } = useSelector((state) => state.products);
   return (
     <main>
       <section>
@@ -28,54 +30,58 @@ const ProductCart = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row" class="border-0">
-                            <div class="p-2">
-                              <img
-                                src="../../asset/products.jpg"
-                                alt=""
-                                width="70"
-                                class="img-fluid rounded shadow-sm"
-                              />
-                              <div class="ml-3 d-inline-block align-middle">
-                                <h5 class="mb-0">
-                                  <a
-                                    href="#"
-                                    class="
+                        {cart.map((item) => {
+                          return (
+                            <tr>
+                              <th scope="row" class="border-0">
+                                <div class="p-2">
+                                  <img
+                                    src={item.pro_url}
+                                    alt=""
+                                    width="70"
+                                    class="img-fluid rounded shadow-sm"
+                                  />
+                                  <div class="ml-3 d-inline-block align-middle">
+                                    <h5 class="mb-0">
+                                      <a
+                                        href="#"
+                                        class="
                                       text-dark
                                       d-inline-block
                                       align-middle
                                     "
-                                  >
-                                    product A
-                                  </a>
-                                </h5>
-                                <span
-                                  class="
+                                      >
+                                        {item.pro_name}
+                                      </a>
+                                    </h5>
+                                    <span
+                                      class="
                                     text-muted
                                     font-weight-normal font-italic
                                     d-block
                                   "
-                                >
-                                  Category: Technology
-                                </span>
-                              </div>
-                            </div>
-                          </th>
-                          <td class="border-0 align-middle">
-                            <strong>$10</strong>
-                          </td>
-                          <td class="border-0 align-middle">
-                            <strong>1</strong>
-                          </td>
-                          <td class="border-0 align-middle">
-                            <a href="#" class="text-dark">
-                              <i class="bi bi-trash"></i>
-                            </a>
-                          </td>
-                        </tr>
+                                    >
+                                      Category: Technology
+                                    </span>
+                                  </div>
+                                </div>
+                              </th>
+                              <td class="border-0 align-middle">
+                                <strong>${item.price}</strong>
+                              </td>
+                              <td class="border-0 align-middle">
+                                <strong>1</strong>
+                              </td>
+                              <td class="border-0 align-middle">
+                                <a href="#" class="text-dark">
+                                  <i class="bi bi-trash"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          );
+                        })}
 
-                        <tr>
+                        {/* <tr>
                           <th scope="row" class="border-0">
                             <div class="p-2">
                               <img
@@ -167,7 +173,7 @@ const ProductCart = () => {
                               <i class="bi bi-trash"></i>
                             </a>
                           </td>
-                        </tr>
+                        </tr> */}
                         <tfoot>
                           <tr>
                             <td class="1 border-0 align-middle">
