@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addProduct } from "../../action/products";
 import { BASE_URL } from "../../helper/constants ";
 
 const ProDetails = () => {
   const [products, setProducts] = useState([]);
+
+  const dispatch = useDispatch();
 
   let { id } = useParams();
 
@@ -64,7 +68,7 @@ const ProDetails = () => {
             </div>
             <p>
               <span class="mr-1">
-                <strong>$12.99</strong>
+                <strong>${products.book_cost}</strong>
               </span>
             </p>
             <p class="pt-1">{products.book_description}</p>
@@ -94,48 +98,23 @@ const ProDetails = () => {
             </div>
             <hr />
             <div class="table-responsive mb-2">
-              <table class="table table-sm table-borderless">
-                <tbody>
-                  <tr>
-                    <td class="pl-0 pb-0 w-25">Quantity</td>
-                  </tr>
-                  <tr>
-                    <td class="pl-0">
-                      <div
-                        class="
-                          def-number-input
-                          number-input
-                          safari_only
-                          mb-0
-                          btn-group
-                          "
-                      >
-                        <a
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                          class="btn btn-sm btn-outline-secondary"
-                        >
-                          <i class="bi bi-dash"></i>
-                        </a>
-                        <input
-                          class="quantity form-control"
-                          min="0"
-                          name="quantity"
-                          value="1"
-                          type="number"
-                        />
-                        <a
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                          class="btn btn-sm btn-outline-secondary"
-                        >
-                          <i class="bi bi-plus"></i>
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <table class="table table-sm table-borderless"></table>
             </div>
-            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">
+            <button
+              type="button"
+              class="btn btn-primary btn-md mr-1 mb-2"
+              onClick={() => {
+                dispatch(
+                  addProduct(
+                    products.id,
+                    products.book_title,
+                    products.book_url,
+                    parseFloat(products.book_cost),
+                    1
+                  )
+                );
+              }}
+            >
               Add to cart
             </button>
           </div>
