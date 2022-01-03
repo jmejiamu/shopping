@@ -15,7 +15,7 @@ let products = [
       "Spring Boot Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "101",
     book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+      "https://kbimages1-a.akamaihd.net/ecd5db80-72c2-4b84-9e1b-feffb6e91bb9/353/569/90/False/spring-microservices-with-spring-boot.jpg",
   },
   {
     id: 5,
@@ -24,7 +24,7 @@ let products = [
       "Express Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "78",
     book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/51MFfESp-KL._SX384_BO1,204,203,200_.jpg",
   },
   {
     id: 4,
@@ -32,8 +32,7 @@ let products = [
     book_description:
       "JavaScript Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "10",
-    book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+    book_url: "https://eloquentjavascript.net/img/cover.jpg",
   },
   {
     id: 3,
@@ -42,7 +41,7 @@ let products = [
       "Java Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.",
     book_cost: "30",
     book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+      "https://www.codejava.net/images/articles/books/beginner-java/SamsTeachYourSelfJava.jpg",
   },
   {
     id: 2,
@@ -50,8 +49,7 @@ let products = [
     book_description:
       "Node Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.",
     book_cost: "40",
-    book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+    book_url: "https://m.media-amazon.com/images/I/51tPFqRdrjL._SL500_.jpg",
   },
   {
     id: 1,
@@ -60,7 +58,7 @@ let products = [
       "React Descrition Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias. ",
     book_cost: "15",
     book_url:
-      "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+      "https://reactjsexample.com/content/images/2019/04/React-and-React-Native.jpg",
   },
 ];
 app.get("/products", (req, res) => {

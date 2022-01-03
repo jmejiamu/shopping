@@ -34,7 +34,7 @@ const Products = () => {
                       <img
                         src={product.book_url}
                         alt="Lights"
-                        style={{ width: "100%" }}
+                        style={{ width: "100%", height: 500 }}
                       />
                     </div>
                   </Link>
