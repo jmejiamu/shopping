@@ -1,3 +1,4 @@
+import { fetchDataService } from "../../helper/apiservice";
 import {
   ADD_PRODUCT,
   API_FAILED,
@@ -60,9 +61,9 @@ export function fetchData() {
     dispatch(fetchingData());
 
     try {
-      const response = await fetch(BASE_URL + "/products");
-      const resJson = await response.json();
-      dispatch(getProductsSuccess(resJson));
+      const response = await fetchDataService("/products");
+      // const resJson = await response.json();
+      dispatch(getProductsSuccess(response));
     } catch (error) {
       dispatch(fetchingDataFail(error));
     }

@@ -91,28 +91,24 @@ const ProductCart = () => {
                           );
                         })}
 
-                        <tfoot>
-                          <tr>
-                            <td class="1 border-0 align-middle">
-                              <strong>Total:</strong>
-                            </td>
-                            <td class="border-0 align-middle">
-                              <strong id="main-total">${mainTotal}</strong>
-                            </td>
-                            <td class="border-0 align-middle">
-                              <strong id="product-quantity">
-                                {quantityTotal}
-                              </strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="border-0 align-middle">
-                              <button class="btn btn-primary">
-                                Check out{" "}
-                              </button>
-                            </td>
-                          </tr>
-                        </tfoot>
+                        <tr>
+                          <td class="1 border-0 align-middle">
+                            <strong>Total:</strong>
+                          </td>
+                          <td class="border-0 align-middle">
+                            <strong id="main-total">${mainTotal}</strong>
+                          </td>
+                          <td class="border-0 align-middle">
+                            <strong id="product-quantity">
+                              {quantityTotal}
+                            </strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="border-0 align-middle">
+                            <button class="btn btn-primary">Check out </button>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
