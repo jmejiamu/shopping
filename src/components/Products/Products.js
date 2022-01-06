@@ -12,10 +12,10 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-  }, []);
-  if (cart.lenght > 0) {
-    sessionStorage.setItem("pro", JSON.stringify(cart));
-  }
+
+    sessionStorage.setItem("products", JSON.stringify(cart));
+  }, [cart]);
+
   //Use date to create a unique id
   const uniqueId = new Date();
   return (

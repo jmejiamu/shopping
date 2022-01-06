@@ -6,6 +6,8 @@ const ProductCart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
 
+  // var item = sessionStorage.getItem("products");
+  // const cart = JSON.parse(item);
   const quantityTotal = sum(cart, (x) => x.quantity);
   const mainTotal = sum(cart, (x) => x.price);
   return (
