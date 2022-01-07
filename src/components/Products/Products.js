@@ -22,12 +22,14 @@ const Products = () => {
   //Use date to create a unique id
   const uniqueId = new Date();
 
+  //Search
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
   const searcBooks = productsList.filter((booksname) =>
     booksname.book_title.toLowerCase().includes(search.toLowerCase())
   );
+
   return (
     <main>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
