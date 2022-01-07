@@ -6,6 +6,7 @@ import { addProduct, fetchData } from "../../action/products";
 
 const Products = () => {
   const [search, setSearch] = useState("");
+  const [cartAdded, setCartAdded] = useState(0);
   const dispatch = useDispatch();
 
   const { productsList, cart } = useSelector((state) => state.products);
@@ -13,8 +14,9 @@ const Products = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-
-    sessionStorage.setItem("products", JSON.stringify(cart));
+    setCartAdded(cart.length);
+    //This add to session store-  I may not need it
+    // sessionStorage.setItem("products", JSON.stringify(cart));
   }, [cart]);
 
   //Use date to create a unique id
@@ -55,7 +57,7 @@ const Products = () => {
                 <Link className="nav-link" to="/cart">
                   <i className="bi bi-cart"></i>
                   <span id="addItem" className="badge badge-pill bg-danger">
-                    {/* {"cartAdded"} */}
+                    {cartAdded}
                   </span>
                 </Link>
               </li>

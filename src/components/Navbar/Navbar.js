@@ -43,7 +43,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className="nav-item mx-2">
+            {/* <li className="nav-item mx-2">
               <input
                 className="form-control mr-sm-2"
                 type="search"
@@ -58,7 +58,7 @@ const Navbar = () => {
               >
                 Search
               </button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
