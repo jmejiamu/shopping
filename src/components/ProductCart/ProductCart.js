@@ -1,10 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProduct } from "../../action/products";
+import { checkOut, deleteProduct } from "../../action/products";
 
 const ProductCart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.products);
+
+  console.log("CART: ", cart);
 
   // var item = sessionStorage.getItem("products");
   // const cart = JSON.parse(item);
@@ -108,7 +110,12 @@ const ProductCart = () => {
                         </tr>
                         <tr>
                           <td class="border-0 align-middle">
-                            <button class="btn btn-primary">Check out </button>
+                            <button
+                              onClick={() => dispatch(checkOut(cart))}
+                              class="btn btn-primary"
+                            >
+                              Check out{" "}
+                            </button>
                           </td>
                         </tr>
                       </tbody>

@@ -1,10 +1,11 @@
-import { fetchDataService } from "../../helper/apiservice";
+import { fetchDataService, postDataService } from "../../helper/apiservice";
 import {
   ADD_PRODUCT,
   API_FAILED,
   API_LOADING,
   API_SUCCESS,
   BASE_URL,
+  CHECKOUT_PRODUCT,
   DELETE_PRODUCT,
 } from "../../helper/constants ";
 
@@ -56,6 +57,13 @@ export const deleteProduct = (id) => {
   };
 };
 
+export const checkoutProduct = (body) => {
+  return {
+    type: CHECKOUT_PRODUCT,
+    body,
+  };
+};
+
 export function fetchData() {
   return async (dispatch) => {
     dispatch(fetchingData());
@@ -66,6 +74,17 @@ export function fetchData() {
       dispatch(getProductsSuccess(response));
     } catch (error) {
       dispatch(fetchingDataFail(error));
+    }
+  };
+}
+
+export function checkOut(body) {
+  return async (dispatch) => {
+    try {
+      const response = await postDataService("/checkout", body);
+      dispatch(checkoutProduct(response));
+    } catch (error) {
+      console.log(error.message);
     }
   };
 }

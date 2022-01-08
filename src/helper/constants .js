@@ -6,3 +6,4 @@ export const API_FAILED = "API_FAILED";
 export const API_SUCCESS = "API_SUCCESS";
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const CHECKOUT_PRODUCT = "CHECKOUT_PRODUCT";

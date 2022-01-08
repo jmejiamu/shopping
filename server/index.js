@@ -61,6 +61,8 @@ let products = [
       "https://reactjsexample.com/content/images/2019/04/React-and-React-Native.jpg",
   },
 ];
+
+let checkoutBooks = [];
 app.get("/products", (req, res) => {
   res.json(products);
 });
@@ -76,6 +78,13 @@ app.get("/products/:id", (req, res) => {
     res.status(200);
     res.json(product);
   }
+});
+
+app.post("/checkout", (req, res) => {
+  const books = { ...req.body };
+  checkoutBooks.push(books);
+  res.status(201);
+  res.json(books);
 });
 
 app.listen(5500, () => {

@@ -3,6 +3,7 @@ import {
   API_FAILED,
   API_LOADING,
   API_SUCCESS,
+  CHECKOUT_PRODUCT,
   DELETE_PRODUCT,
 } from "../../helper/constants ";
 
@@ -11,6 +12,7 @@ const initialState = {
   failed: null,
   productsList: [],
   cart: [],
+  checkout: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -43,6 +45,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: product,
+      };
+
+    case CHECKOUT_PRODUCT:
+      return {
+        ...state,
+        checkout: [...state.checkout, { ...action.body }],
       };
     default:
       return state;
